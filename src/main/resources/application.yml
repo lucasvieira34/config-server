@@ -1,0 +1,20 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    bus:
+      enabled: true
+    config:
+      server:
+        git:
+          uri: https://github.com/lucasvieira34/poc-config-server
+          default-label: main
+          username: ${GITHUB_USER}
+          password: ${GITHUB_PASS}
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASS:guest}
+    virtual-host: ${RABBITMQ_VHOST:/}
